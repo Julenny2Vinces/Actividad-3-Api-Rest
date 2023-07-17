@@ -21,68 +21,51 @@ class Home extends BaseController
     {
 
 
-        echo ' ACTIVIDAD 5 API REST NOVEDAD POLICIAL';
+echo 'VENTAS DE MAQUILLAJE';
 
-        $robo= array (
-                "usuario"=>"Cbos_Macias",
-                "grado"=>"Cabo Segundo",
-                "nombres"=>"Carlos Macias",
-                "Lugar de trabajo"=>"Portoviejo",
-                "Ubicacion"=>"Av. Ejercito y America",
-                "Sospechoso"=>"Alias Caliche" 
-    
-    );
-
-        
-        $robo1= array (
-                "usuario"=>"Sgos_Biones",
-                "grado"=>"Sargento Segundo",
-                "nombres"=>"Briones Walter",
-                "Lugar de trabajo"=>"Colon",
-                "Ubicacion"=>"Manabí",
-                "tipo de evento"=>"Robo a local Comercial",
-                "Sospechoso"=>"no reconocido"
-                
-
-        );
-        $robo2= array (
-                "usuario"=>"Cbos_Macias",
-                "grado"=>"Cabo Segundo",
-                "nombres"=>"Carlos Macias",
-                "Lugar de trabajo"=>"Portoviejo",
-                "Ubicacion"=>"Manabí",
-                "tipo de evento"=>"+5930991335922",
-                "Sospechoso"=>"Alias Caliche"
-
+        $usuario = array(
+            "Empresa" => "Jumake",
+            "Dueña" => "Julenny Vera",
+            "Ciudad" => "PORTOVIEJO",
+            "Telf" => "0996777101"
         );
 
-        $robo3= array (
-            "usuario"=>"Cbop_Ñamo",
-            "grado"=>"Cabo Primero",
-            "nombres"=>"Manuel Turizo",
-            "Lugar de trabajo"=>"Santa Ana",
-            "Ubicacion"=>"Manabí",
-            "tipo de evento"=>"Robo de moto",
-            "Sospechoso"=>"No reconocido"
-
-
+        $marca1 = array(
+            "nombre" => "CHANEL",
+            "descripcion" => "Linea de Productos en Base y Correctores",
+            "pais" => "Mexico",
+            "sitio_web" => "https://www.chanel.com/es/"
         );
-        $tentativ= array (
-                "usuario"=>"Poli_Grijalba",
-                "grado"=>"Policia Nacional",
-                "nombres"=>"Grijalba Jonathan",
-                "Lugar de trabajo"=>"Jipijapa",
-                "Ubicacion"=>"Manabí",
-                "tipo de evento"=>"Persona herida por arma de fuego",
-                "Sospechoso"=>"Alias elasteroide"
 
+        $marca2 = array(
+            "nombre" => "Lancóme",
+            "descripcion" => "Cosméticos de lujo, perfumes y cuidado de la piel",
+            "pais" => "Inglaterra",
+            "sitio_web" => "hhttps://www.chanel.com/es/"
         );
-        
-        $resultado = array($robo,  $robo1, $robo2,$robo3,$tentativ );
 
+        $producto1 = array(
+            "nombre" => "LES PINCEAUX DE CHANEL",
+            "descripcion" => "SET DE 3 BROCHAS ESENCIALES",
+            "precio" => 10.99,
+            "marca" => $marca1
+        );
+
+        $producto2 = array(
+            "nombre" => "MÁSCARA DE PESTAÑAS CON SUERO LE 8 HYPNÔSE",
+            "descripcion" => "Máscara de pestañas voluminizadora con suero.",
+            "precio" => 15.99,
+            "marca" => $marca2
+        );
+
+        $productos = array($producto1, $producto2);
+
+        $resultado = array(
+            "usuario" => $usuario,
+            "productos" => $productos
+        );
         return $this->response->setJSON($resultado);
         }   
-    
             
     
         public function login(){
